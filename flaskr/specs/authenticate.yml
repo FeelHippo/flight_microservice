@@ -1,0 +1,41 @@
+
+tags:
+  - Calculate Flights
+parameters:
+  - in: body
+    name: request
+    description: request
+    required: true
+    schema:
+      $ref: '#/definitions/AuthenticateUser'
+responses:
+  '201':
+    description: Created
+    schema:
+      $ref: '#/definitions/TokenResponse'
+  '400':
+    description: Bad Request
+  '401':
+    description: Unauthorized
+definitions:
+  AuthenticateUser:
+    type: object
+    properties:
+      user_data:
+        type: object
+        properties:
+          username:
+            type: string
+            nullable: false
+            pattern: '^[^@]+@[^@]+\.[^@]+$'
+            description: Must be a valid email address
+          password:
+            type: string
+            nullable: false
+            pattern: '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$'
+            description: Must be a valid alphanumeric password
+  TokenResponse:
+    type: object
+    properties:
+      authorization:
+        type: string
