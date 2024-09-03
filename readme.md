@@ -19,8 +19,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[Store Drive and Zvolt User Data into Redshift](https://autosense.atlassian.net/browse/BLUE-992)
-
 * A microservice API to help understand and track how a particular person’s flight path may be queried.
 * The API should accept a request that includes a list of flights defined by a source and destination airport code.
 * These flights may not be listed in order and must be sorted to find the total flight paths starting and ending at airports.
@@ -49,3 +47,5 @@ http://127.0.0.1:8080/apidocs/
 
 ### Test application
 python -m pytest
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
